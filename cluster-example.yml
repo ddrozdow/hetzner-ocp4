@@ -33,7 +33,16 @@ auth_htpasswd:
   - admin:$apr1$k5WdDLwM$TzqDd.juwTiotMbctaxJt.
   - local:$apr1$k5WdDLwM$TzqDd.juwTiotMbctaxJt.
 
-storage_nfs: true # Default is false
+storage_nfs: false # Default is false
+
+# Section for installing OCS. You should use either NFS or OCS Setup. The OCS settings configure the Worker Nodes to be ready for OCS airbrake_deployment
+# You still need to enable the Operator in OCP and create the yml Files in the folder ocs-setup. A Readme is provided 
+# It is recommended to beef up the Worker nodes that will run OCS with more compute and RAM, see the following vars as a example 
+install_ocs: true # Default is false
+compute_vcpu: 8
+compute_memory_size: 65536
+ocs_disk_size_1: 10G
+ocs_disk_size_2: 100G
 
 auth_redhatsso:
   client_id: "xxxxx.apps.googleusercontent.com"

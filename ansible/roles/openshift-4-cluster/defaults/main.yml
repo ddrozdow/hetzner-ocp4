@@ -73,3 +73,10 @@ storage_nfs_target_namespace: openshift-nfs-provisioner
 
 # sdn plugin
 sdn_plugin_name: OVNKubernetes
+
+#Option to create Worker nodes ready for OCS - it is also recommended for OCS to beef up the Nodes. An exapmle of the necessary Compute and RAM is provided in the Cluster example
+install_ocs: false
+# qemu-img image size specified.
+# #   You may use k, M, G, T, P or E suffixe
+ocs_disk_size_1: 10G
+ocs_disk_size_2: 100G
