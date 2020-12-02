@@ -81,6 +81,7 @@
     vm_memory_size: "{{ master_memory_size }}"
     vm_memory_unit: "{{ master_memory_unit }}"
     vm_root_disk_size: "{{ master_root_disk_size }}"
+    install_ocs: false
   with_sequence: start=0 end="{{ master_count|int - 1 }}" stride=1
 
 - name: Create compute node
@@ -95,7 +96,6 @@
     vm_memory_size: "{{ compute_memory_size }}"
     vm_memory_unit: "{{ compute_memory_unit }}"
     vm_root_disk_size: "{{ compute_root_disk_size }}"
-    install_ocs: false
   with_sequence: start=0 end="{{ compute_count|int - 1 }}" stride=1
 
 - name: Include post installation tasks
