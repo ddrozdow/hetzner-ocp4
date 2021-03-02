@@ -84,6 +84,14 @@
     group: root
     mode: 0644
 
+- name: Copy Install Image
+  template:
+    src: "{{ install_image_file }}"
+    dest: /root/
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Run installimage 
   command: "/root/.oldroot/nfs/install/installimage -a -c /root/autosetup"
   environment:

@@ -16,6 +16,18 @@
     path: "/var/lib/libvirt/images/{{ vm_instance_name }}.qcow2"
     state: absent
 
+- name: Delete OCS disk 1 {{ vm_instance_name }}
+  file:
+    path: "/var/lib/libvirt/images/{{ vm_instance_name }}-ocs-1.qcow2"
+    state: absent
+  ignore_errors: yes
+
+- name: Delete OCS disk 2 {{ vm_instance_name }}
+  file:
+    path: "/var/lib/libvirt/images/{{ vm_instance_name }}-ocs-2.qcow2"
+    state: absent
+  ignore_errors: yes
+
 - name: Delete ignition {{ vm_instance_name }}
   file:
     path: "/var/lib/libvirt/images/{{ vm_instance_name }}.ign"

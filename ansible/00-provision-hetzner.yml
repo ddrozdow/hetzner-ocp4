@@ -6,7 +6,7 @@
   connection: local
   gather_facts: no
   vars_files:
-  - ../cluster.yml
+  - ../cluster-provision.yml
   tasks:
   - name: Add hetzner server to inventory
     add_host: 
@@ -17,7 +17,7 @@
   gather_facts: no
   remote_user: root
   vars_files:
-  - ../cluster.yml
+  - ../cluster-provision.yml
   tasks:
   - name: provision hetzner root server
     import_role:
